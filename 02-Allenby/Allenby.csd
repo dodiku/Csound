@@ -17,9 +17,9 @@ ksmps = 10
 nchnls = 1
 0dbfs = 1.0
 
-strset 1, "084_this-bass-swings-weird.wav"
-strset 2, "093_ambient-snaploop.aiff"
-strset 3, "greatest_moment.aif"
+strset 1, "samples/084_this-bass-swings-weird.wav"
+strset 2, "samples/093_ambient-snaploop.aiff"
+strset 3, "samples/greatest_moment.aif"
 
 
 instr 1

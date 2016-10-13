@@ -18,13 +18,13 @@ ksmps = 10
 nchnls = 1
 0dbfs = 1.0
 
-strset 1, "084_this-bass-swings-weird.wav"
-strset 2, "093_ambient-snaploop.aiff"
-strset 3, "greatest_moment.aif"
-strset 4, "085_deep-acoustic-bass.aif"
-strset 5, "ambient-void-pad.wav"
-strset 6, "bd1.wav"
-strset 7, "_077_rolling-down-machine.wav"
+strset 1, "samples/084_this-bass-swings-weird.wav"
+strset 2, "samples/093_ambient-snaploop.aiff"
+strset 3, "samples/greatest_moment.aif"
+strset 4, "samples/085_deep-acoustic-bass.aif"
+strset 5, "samples/ambient-void-pad.wav"
+strset 6, "samples/bd1.wav"
+strset 7, "samples/_077_rolling-down-machine.wav"
 
 ;a1[, a2[, ... aN]] diskin2 ifilcod [kpitch, iskiptim , iwrap, iformat, iwsize, ibufsize, iskipinit]
 
