@@ -1,1 +1,0 @@
-![https://www.google.com/maps/place/Lunz+St,+Tel+Aviv-Yafo,+Israel/@32.069799,34.777932,17z/data=!3m1!4b1!4m5!3m4!1s0x151d4b78cc31b63d:0xec091a05e60cc219!8m2!3d32.069799!4d34.780126](https://upload.wikimedia.org/wikipedia/commons/8/8e/%D7%90%D7%91%D7%A8%D7%94%D7%9D_%D7%9E%D7%A9%D7%94_%D7%9C%D7%95%D7%A0%D7%A5.jpg)
