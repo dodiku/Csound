@@ -1,2 +1,2 @@
 # Csound
-Some of my _relatively complete_ Csound compositions.
+A showcase of my recent [Csound](http://www.csounds.com/) compositions.
