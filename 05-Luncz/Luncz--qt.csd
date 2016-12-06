@@ -94,14 +94,14 @@ iRandomNote random 0, 1
 ; kNotesArray[] fillarray 196, 261, 330, 261, 349, 330, 261, 196,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0
 
 iduration = p3
-amplitude = p4 ;;;; add envelope
+iamplitude = p4 ;;;; add envelope
 iattack = 0.3
 
 inotesLeft = p6
 kfreq = p5
 
 ;envelope
-amplitude linseg 0, iduration * iattack, amplitude, iduration * ( 1 - iattack ), 0
+aenv linseg 0, iduration * iattack, iamplitude, iduration * ( 1 - iattack ), 0
 
 
 ares oscil3 aenv, kfreq, 1
