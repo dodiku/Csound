@@ -102,35 +102,39 @@ kfreq = kNotesArray[p5]
 
 
 
-;envelope:
-aenv linseg 0, iduration * iattack, iamplitude, iduration * ( 1 - iattack ), 0
-
-
-ares oscil3 aenv, kfreq, 1
-outs ares, ares
-
-printk 1, kNotesArray[p5]
-
-
-; gareverb = ares
+ktempo tempoval
+printk 1, ktempo
 
 if (p6 == 1) then
 	schedule p1, 8, iduration, iamplitude, 1 ,0
 endif
 
+
 if (p6 == 0) then
-	schedule p1, 8, iduration, iamplitude, 0 ,1
+	; schedule p1, 4, 1, 0, 0 ,3
+	schedule p1, 8, iduration, iamplitude, 0 ,1	
 endif
 
+if (p6 == 0) kgoto speedup
+	kgoto play
+
+speedup:
+  ; Increase the tempo to 150 beats per minute.
+  tempo 150, 60
 
 
-; if ( p6 <= 1 ) igoto bypassScheduler
 
-; 		schedule p1, 2.6, iduration, iamplitude, kNotesArray[iRandomNote] ,inotesLeft-1
-			
-; 		printf_i "%d note in melody", 1, inotesLeft - 1
+; if (p6 != 2) igoto bypassScheduler
+; 	schedule p1, 8, iduration, iamplitude, 0 ,1
+; 	tempo 150, 60
+; bypassScheduler: 
 
-; 	bypassScheduler:
+	;envelope:
+	aenv linseg 0, iduration * iattack, iamplitude, iduration * ( 1 - iattack ), 0
+
+
+	ares oscil3 aenv, kfreq, 1
+	outs ares, ares
 
 endin
 
@@ -144,13 +148,10 @@ endin
 f 1 0 [2^16] 10 1 0.15 6 2 1
 f 2 0 [2^16] 10 1 0.15 0.5 0.1
 
+; t 0 60 4 120
+
 ; Start Sine Box
 ;	p1		p2		p3		p4		p5		p6
-
-i	201		0		240		0.5 					;Envelope
-i	202		0		240		1 						;Vibrato
-
-
 ; i	100		10		0.2		0.2		200
 ; i	101		0		240		0.1
 i	102		0		10		0.2		0		1
