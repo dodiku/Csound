@@ -84,65 +84,53 @@ endin
 
 instr 102
 
-inoteC = cpspch (3.0)
-inoteD = cpspch (3.2)
+inoteC = cpspch (7.0)
+inoteD = cpspch (5.2)
 kNotesArray[] init 2
 kNotesArray[] fillarray inoteC, inoteD
-iRandomNote random 0, 1
+iRandomNote random 0, 2
 
 ; kNotesArray[] init 16
 ; kNotesArray[] fillarray 196, 261, 330, 261, 349, 330, 261, 196,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0
 
 iduration = p3
 iamplitude = p4 ;;;; add envelope
-iattack = 0.3
+iattack = 0.5
 
 inotesLeft = p6
-kfreq = p5
+kfreq = kNotesArray[p5]
 
-;envelope
+
+
+;envelope:
 aenv linseg 0, iduration * iattack, iamplitude, iduration * ( 1 - iattack ), 0
 
 
 ares oscil3 aenv, kfreq, 1
 outs ares, ares
 
+printk 1, kNotesArray[p5]
+
 
 ; gareverb = ares
 
-if (p6 = 1) then
-	schedule p1, p2, iduration, iamplitude, kNotesArray[iRandomNote] ,5
+if (p6 == 1) then
+	schedule p1, 8, iduration, iamplitude, 1 ,0
 endif
 
-if ( p6 <= 1 ) igoto bypassScheduler
+if (p6 == 0) then
+	schedule p1, 8, iduration, iamplitude, 0 ,1
+endif
 
-		schedule p1, 2.6, iduration, iamplitude, kNotesArray[iRandomNote] ,inotesLeft-1
+
+
+; if ( p6 <= 1 ) igoto bypassScheduler
+
+; 		schedule p1, 2.6, iduration, iamplitude, kNotesArray[iRandomNote] ,inotesLeft-1
 			
-		printf_i "%d note in melody", 1, inotesLeft - 1
+; 		printf_i "%d note in melody", 1, inotesLeft - 1
 
-	bypassScheduler:
-
-endin
-
-;------------------------------------------------------------------------------
-; Envelope
-;------------------------------------------------------------------------------
-
-instr 201
-
-;iduration random 20, 40
-iduration = p3;
-iamplitude = p4;
-
-;aenv linseg 0, idur * iattack, iamp * 0dbfs, idur * ( 1 - iattack ), 0
-
-aenv linseg 0, iduration*0.25, iamplitude, iduration* ( 0.65 ), 0.1
-
-gaenvelope = aenv
-
-;gaenvelope linseg 0, idur * iattack, iamp * 0dbfs, idur * ( 1 - iattack ), 0
-
-;gaenvelope adsr 1 , 0.1 , .1 , .001
+; 	bypassScheduler:
 
 endin
 
@@ -153,7 +141,7 @@ endin
 
 
 ; High resolution sine table
-f 1 0 [2^16] 10 1 0.15
+f 1 0 [2^16] 10 1 0.15 6 2 1
 f 2 0 [2^16] 10 1 0.15 0.5 0.1
 
 ; Start Sine Box
@@ -164,8 +152,8 @@ i	202		0		240		1 						;Vibrato
 
 
 ; i	100		10		0.2		0.2		200
-i	101		0		240		0.2
-i	102		5		10		0.1		0		1
+; i	101		0		240		0.1
+i	102		0		10		0.2		0		1
 
 
 
