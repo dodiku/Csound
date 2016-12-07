@@ -11,6 +11,11 @@ gaenvelope init 0;
 gkvibrato init 0;
 gareverb init 0;
 
+;------------------------------------------------------------------------------
+; OSC
+;------------------------------------------------------------------------------
+
+ihandle OSCinit iport
 
 ;------------------------------------------------------------------------------
 ; Instrument: beats
@@ -83,6 +88,10 @@ endin
 
 
 instr 102
+
+kamp init 0
+kans OSClisten ihandle, "/root", "f", kamp
+
 
 inoteC = cpspch (6.0)
 inoteG = cpspch (6.07)
