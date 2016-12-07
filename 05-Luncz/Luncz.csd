@@ -84,11 +84,13 @@ endin
 
 instr 102
 
-inoteC = cpspch (7.0)
+inoteC = cpspch (6.0)
+inoteG = cpspch (6.07)
 inoteD = cpspch (5.2)
+
 kNotesArray[] init 2
-kNotesArray[] fillarray inoteC, inoteD
-iRandomNote random 0, 2
+kNotesArray[] fillarray inoteC, inoteG, inoteD
+aRandomNote random 0, 2
 
 ; kNotesArray[] init 16
 ; kNotesArray[] fillarray 196, 261, 330, 261, 349, 330, 261, 196,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0
@@ -97,30 +99,37 @@ iduration = p3
 iamplitude = p4 ;;;; add envelope
 iattack = 0.5
 
-inotesLeft = p6
-kfreq = kNotesArray[p5]
+; inotesLeft = p6
+kfreq = kNotesArray[p6]
 
 
+printk 1, kfreq
+printk 1, p6
 
-ktempo tempoval
-printk 1, ktempo
+; schedule p1, 8, iduration, iamplitude, 1 ,round(aRandomNote)
+
+if (p6 == 0) then
+	schedule p1, 8, iduration, iamplitude, 1 ,1
+endif
+
 
 if (p6 == 1) then
+	schedule p1, 8, iduration, iamplitude, 0 ,2
+endif
+
+
+if (p6 == 2) then
 	schedule p1, 8, iduration, iamplitude, 1 ,0
 endif
 
 
-if (p6 == 0) then
-	; schedule p1, 4, 1, 0, 0 ,3
-	schedule p1, 8, iduration, iamplitude, 0 ,1	
-endif
+; ktempo tempoval
+; if (p6 == 0) kgoto speedup
+; 	kgoto play
 
-if (p6 == 0) kgoto speedup
-	kgoto play
-
-speedup:
+; speedup:
   ; Increase the tempo to 150 beats per minute.
-  tempo 150, 60
+  ; tempo 150, 60
 
 
 
@@ -154,7 +163,7 @@ f 2 0 [2^16] 10 1 0.15 0.5 0.1
 ;	p1		p2		p3		p4		p5		p6
 ; i	100		10		0.2		0.2		200
 ; i	101		0		240		0.1
-i	102		0		10		0.2		0		1
+i	102		0		10		0.2		0		0
 
 
 
