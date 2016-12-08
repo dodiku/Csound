@@ -15,7 +15,7 @@ gareverb init 0;
 ; OSC
 ;------------------------------------------------------------------------------
 
-ihandle OSCinit iport
+gihandle OSCinit 5000
 
 ;------------------------------------------------------------------------------
 ; Instrument: beats
@@ -89,9 +89,9 @@ endin
 
 instr 102
 
-kamp init 0
-kans OSClisten ihandle, "/root", "f", kamp
-
+Sbpm init "0"
+kans OSClisten gihandle, "/csound", "s", Sbpm
+kbpm strtolk Sbpm
 
 inoteC = cpspch (6.0)
 inoteG = cpspch (6.07)
@@ -114,6 +114,8 @@ kfreq = kNotesArray[p6]
 
 printk 1, kfreq
 printk 1, p6
+printk 1, kans
+printk 1, kbpm
 
 ; schedule p1, 8, iduration, iamplitude, 1 ,round(aRandomNote)
 
