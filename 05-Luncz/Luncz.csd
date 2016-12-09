@@ -134,7 +134,7 @@ if (p6 == 2) then
 endif
 
 
-; ktempo tempoval
+ktempo tempoval
 ; if (p6 == 0) kgoto speedup
 ; 	kgoto play
 
@@ -146,9 +146,9 @@ endif
 
 ; if (p6 != 2) igoto bypassScheduler
 ; 	schedule p1, 8, iduration, iamplitude, 0 ,1
-; 	tempo 150, 60
+	; tempo 150, 60
 ; bypassScheduler: 
-
+printk 1, ktempo
 	;envelope:
 	aenv linseg 0, iduration * iattack, iamplitude, iduration * ( 1 - iattack ), 0
 
@@ -168,7 +168,8 @@ endin
 f 1 0 [2^16] 10 1 0.15 6 2 1
 f 2 0 [2^16] 10 1 0.15 0.5 0.1
 
-; t 0 60 4 120
+; t 0 60 4 120 4 60 4 120
+; t 4 120
 
 ; Start Sine Box
 ;	p1		p2		p3		p4		p5		p6
