@@ -20,11 +20,12 @@ instr 100
 kNotesArray[] init 3
 kNotesArray[] fillarray 110, 220
 
+
 iduration = p3
 iamplitude = p4
 iattack = 0.001
 
-; inotesLeft = p5
+inotesLeft = p5
 kfreq = kNotesArray[rnd(1)]
 istartMin = 0.2
 istartMax = 4
@@ -39,14 +40,14 @@ ares moogvcf ares, 2000, 0.8
 
 outs ares, ares
 
-; if ( inotesLeft <= 1 ) igoto bypassScheduler
+if ( inotesLeft <= 1 ) igoto bypassScheduler
 
-; 		istartNext = rnd( istartMax - istartMin ) + istartMin
-; 		schedule p1, istartNext, iduration, iamplitude ,inotesLeft - 1
+		istartNext = rnd( istartMax - istartMin ) + istartMin
+		schedule p1, istartNext, iduration, iamplitude ,inotesLeft - 1
 		
-; 		printf_i "%d notes left\n", 1, inotesLeft - 1
+		printf_i "%d notes left\n", 1, inotesLeft - 1
 
-; 	bypassScheduler:
+	bypassScheduler:
 
 endin
 
@@ -143,7 +144,7 @@ f 2 0 [2^16] 10 1 0 0 0
 
 ; Start Sine Box
 ;	p1		p2		p3		p4		p5		p6
-; i	100		0		0.3		0.2		200
+i	100		0		0.3		0.2		200
 ; i	101		0		240		0.1
 i	102		0		10		0.2		0		0
 
