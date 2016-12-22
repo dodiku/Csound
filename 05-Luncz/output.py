@@ -64,8 +64,7 @@ if ret == ctcsound.CSOUND_SUCCESS:
 						data.append(int(line[0]))
 
 				recording_tempo = data[0]
-				# print ('tempo float (recording_tempo):', recording_tempo)
-    			# print ('data:', data)
+
 		for file in new_files:
 			if file.endswith(".csv"):
 
@@ -84,7 +83,9 @@ if ret == ctcsound.CSOUND_SUCCESS:
 					original_beat_times.append(float(beat))
 
 				n = 1
-				print ('====== Sending to Csound =======')
+				print ('* * * * * * * * * * * * * * * * * * * * * *')
+				print ('SENDING TO CSOUND')
+				print ('* * * * * * * * * * * * * * * * * * * * * *')
 				print ('Getting data from:', file)
 				print ('Beat onset times:', original_beat_times)
 				print ('Csound score lines:')
@@ -109,7 +110,9 @@ if ret == ctcsound.CSOUND_SUCCESS:
 						pt.scoreEvent(False, 'i', (100, modified_time, 1, 0.2, cpspch_array[data[n]], version, 1, recording_tempo, loop_length))
 						print (100, modified_time, 1, 0.2, cpspch_array[data[n]], version, 1, recording_tempo, loop_length)
 					n = n+1
-				print ('====== End =======')
+				print ('* * * * * * * * * * * * * * * * * * * * * *')
+				print ('END')
+				print ('* * * * * * * * * * * * * * * * * * * * * *')
 
 				# MOVING ALL EXISTING FILES TO A BACKUP DIRECTORY
 				old_files = os.listdir(source)

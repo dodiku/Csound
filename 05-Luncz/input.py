@@ -152,6 +152,6 @@ for note in notes_sorted:
 
 bpm_value.close()
 
-print ('* * * * * * * * * * * * * * * * * * * * * *')		
+print ('* * * * * * * * * * * * * * * * * * * * * *')	
 print ('RECORDING ANALYSIS COMPLETED SUCCESSFULLY :)')
 print ('* * * * * * * * * * * * * * * * * * * * * *')
