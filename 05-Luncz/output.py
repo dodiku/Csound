@@ -1,7 +1,7 @@
 '''
 Thanks a lot to https://github.com/fggp, who provided supported and assistance
 with the 'ctcsound' package throughout the building process.
-See the ctcsound package here: the https://github.com/fggp/ctcsound
+See the ctcsound package here: https://github.com/fggp/ctcsound
 See the help thread here: https://github.com/fggp/ctcsound/issues/2
 '''
 
