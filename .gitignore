@@ -6,6 +6,10 @@ ENV/
 env/
 env2/
 
-# Folders
-_recordings/
-05-Luncz/Server/Luncz
+# Files
+_recordings/*.csv
+_recordings/*.txt
+_recordings/*.wav
+_recordings/backup/*.csv
+_recordings/backup/*.txt
+_recordings/backup/*.wav
