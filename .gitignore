@@ -7,9 +7,9 @@ env/
 env2/
 
 # Files
-_recordings/*.csv
-_recordings/*.txt
-_recordings/*.wav
-_recordings/backup/*.csv
-_recordings/backup/*.txt
-_recordings/backup/*.wav
+/05-Luncz/_recordings/*.csv
+/05-Luncz/_recordings/*.txt
+/05-Luncz/_recordings/*.wav
+/05-Luncz/_recordings/backup/*.csv
+/05-Luncz/_recordings/backup/*.txt
+/05-Luncz/_recordings/backup/*.wav
