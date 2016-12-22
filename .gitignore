@@ -1,2 +1,11 @@
 .DS_Store
+
+# virtualenv
+venv/
+ENV/
+env/
+env2/
+
+# Folders
+_recordings/
 05-Luncz/Server/Luncz
