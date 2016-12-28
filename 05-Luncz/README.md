@@ -9,7 +9,7 @@ December 22nd, 2016
 ### OVERVIEW: MUSIC AS A TOOL
 “Luncz: Playing Data” was my first attempt to generate audio related data from an analog  recording, and to use this data to play new music.  
 The purpose of this project was to build a tool (or an installation) that will create an endless conversation between a musician and a machine. The software allows musicians to record short snippets of music, and uses these recordings to change the background music in the room. The recorded music is being analyzed, and using the result of the audio analysis, beats and changes in timbre are being introduced on the background music.  
-The background music was not designed for listening. Instead, the background music was designed to support the musician, and to leave room for further playing and recording (more about that on the ‘SOUND DESIGN’ section).  
+The background music was not designed for listening. Instead, the background music was designed to support the musician, and to leave room for further playing and recording.  
 
 ### HOW TO PLAY: INSTRUCTIONS
 Luncz is being run by two Python scripts:  
