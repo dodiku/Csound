@@ -37,8 +37,8 @@ Luncz is being run by two Python scripts:
 ``$ pip install -r requirements.txt ``
 
 1. Add ‘ctcsound’ to you site packages:
--- Copy ‘ctcsound.py’ and ‘csoundSession.py’ files from the ‘ctcsound’ folder.
--- Paste the files on ‘<project_main_folder>/env/lib/python2.7/site-packages 
+	- Copy ‘ctcsound.py’ and ‘csoundSession.py’ files from the ‘ctcsound’ folder.
+	- Paste the files on ‘<project_main_folder>/env/lib/python2.7/site-packages 
 
 1. While on the project main directory, run ``output.py`` to start the background music:   
 ``$ python output.py ``
