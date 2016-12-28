@@ -53,7 +53,7 @@ Luncz is being run by two Python scripts:
 
 
 ##### TROUBLESHOOTING
-In case where you’re getting the following error: 
+In case where you’re getting the following error:   
 ``RuntimeError: Python is not installed as a framework. The Mac OS X backend will not be able to function correctly if Python is not installed as a framework. See the Python documentation for more information on installing Python as a framework on Mac OS X. Please either reinstall Python as a framework, or try one of the other backends. If you are Working with Matplotlib in a virtual enviroment see 'Working with Matplotlib in Virtual environments' in the Matplotlib FAQ.``  
 
 Do the following actions:   
