@@ -43,7 +43,7 @@ Luncz is being run by two Python scripts:
 1. While on the project main directory, run ``output.py`` to start the background music:   
 ``$ python output.py ``
 
-1. While on the project main directory, run ``input.py`` to record analog audio signal:   
+1. Open a new terminal window, and go to the project main folder. While on the project main directory, run ``input.py`` to record analog audio signal:   
 ``$ python input.py ``
 
 1. Hear the background music changes based on the analysis of the recorded audio.
