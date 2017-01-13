@@ -17,7 +17,7 @@ CHUNK = 1024
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 44100
-RECORD_SECONDS = 6
+RECORD_SECONDS = 10
 AUDIO_OUTPUT_TYPE = ".wav"
 WAVE_OUTPUT_FILENAME_NO_EXTENSION = "_recordings/" + datetime.datetime.now().isoformat()
 WAVE_OUTPUT_FILENAME = "_recordings/" + datetime.datetime.now().isoformat() + AUDIO_OUTPUT_TYPE
@@ -29,7 +29,7 @@ print ('1...')
 print ('* * * * * * * * * * * * * * * * * * * * * *')
 sleep(1)
 
-print ('* * * * * * * * * * * * * * * * * * * * * *')	
+print ('* * * * * * * * * * * * * * * * * * * * * *')
 print ('2...')
 print ('* * * * * * * * * * * * * * * * * * * * * *')
 sleep(1)
@@ -55,7 +55,7 @@ for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
     data = stream.read(CHUNK)
     frames.append(data)
 
-print ('* * * * * * * * * * * * * * * * * * * * * *')		
+print ('* * * * * * * * * * * * * * * * * * * * * *')
 print ('DONE RECORDING')
 print ('* * * * * * * * * * * * * * * * * * * * * *')
 
@@ -152,6 +152,6 @@ for note in notes_sorted:
 
 bpm_value.close()
 
-print ('* * * * * * * * * * * * * * * * * * * * * *')	
+print ('* * * * * * * * * * * * * * * * * * * * * *')
 print ('RECORDING ANALYSIS COMPLETED SUCCESSFULLY :)')
 print ('* * * * * * * * * * * * * * * * * * * * * *')
